@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "build": "tsc",
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "precommit": "lint-staged",
+    "postinstall": "husky install",
+    "test-sample": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bull-board/api": "^5.15.3",
+    "eslint": "^8.42.0",
+    "@nestjs/schedule": "^4.0.0",
+    "typeorm": "^0.3.17",
+    "humps": "^2.0.1",
+    "@types/cache-manager-redis-store": "^2.0.4",
+    "puppeteer": "21.6.1",
+    "@thalalabs/router-sdk": "^1.2.0",
+    "nestjs-console": "^9.0.0",
+    "morgan": "^1.10.0",
+    "@aptos-labs/ts-sdk": "^1.9.1"
+  }
+}
