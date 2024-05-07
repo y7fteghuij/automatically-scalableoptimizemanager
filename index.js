@@ -1,17 +1,14 @@
-function sortedListToBST(head) {
-  if (!head) return null;
-  if (!head.next) return new TreeNode(head.val);
-  let slow = head;
-  let fast = head;
-  let prev = null;
-  while (fast && fast.next) {
-    prev = slow;
-    slow = slow.next;
-    fast = fast.next.next;
+const insertionSortRecursive = (arr, n = arr.length) => {
+  if (n <= 1) {
+    return arr;
   }
-  const root = new TreeNode(slow.val);
-  prev.next = null;
-  root.left = sortedListToBST(head);
-  root.right = sortedListToBST(slow.next);
-  return root;
-}
+  insertionSortRecursive(arr, n - 1);
+  const last = arr[n - 1];
+  let j = n - 2;
+  while (j >= 0 && arr[j] > last) {
+    arr[j + 1] = arr[j];
+    j--;
+  }
+  arr[j + 1] = last;
+  return arr;
+};
